@@ -1,7 +1,8 @@
-﻿using CarRentalManagement.Server.Data;
-using CarRentalManagement.Server.IRepository;
-using CarRentalManagement.Server.Models;
-using CarRentalManagement.Shared.Domain;
+﻿using Grooviee.Server.Data;
+using Grooviee.Server.IRepository;
+using Grooviee.Server.Models;
+using Grooviee.Server.Repository;
+using Grooviee.Shared.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -11,19 +12,12 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace CarRentalManagement.Server.Repository
+namespace Grooviee.Server.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        private IGenericRepository<Make> _makes;
-        private IGenericRepository<Model> _models;
-        private IGenericRepository<Colour> _colours;
-        private IGenericRepository<Booking> _bookings;
-        private IGenericRepository<Customer> _customers;
-        private IGenericRepository<Buses> _vehicles;
-        private IGenericRepository<Driver> _drivers;
-        private IGenericRepository<Payment> _payments;
+        private IGenericRepository<Bus> _buses;
         private IGenericRepository<Feedback> _feedbacks;
 
         private UserManager<ApplicationUser> _userManager;
@@ -34,22 +28,8 @@ namespace CarRentalManagement.Server.Repository
             _userManager = userManager;
         }
 
-        public IGenericRepository<Make> Makes
-            => _makes ??= new GenericRepository<Make>(_context);
-        public IGenericRepository<Model> Models
-            => _models ??= new GenericRepository<Model>(_context);
-        public IGenericRepository<Colour> Colours
-            => _colours ??= new GenericRepository<Colour>(_context);
-        public IGenericRepository<Buses> Vehicles
-            => _vehicles ??= new GenericRepository<Buses>(_context);
-        public IGenericRepository<Booking> Bookings
-            => _bookings ??= new GenericRepository<Booking>(_context);
-        public IGenericRepository<Customer> Customers
-            => _customers ??= new GenericRepository<Customer>(_context);
-        public IGenericRepository<Driver> Drivers
-            => _drivers ??= new GenericRepository<Driver>(_context);
-        public IGenericRepository<Payment> Payments
-            => _payments ??= new GenericRepository<Payment>(_context);
+        public IGenericRepository<Bus> Buses
+            => _buses ??= new GenericRepository<Bus>(_context);
         public IGenericRepository<Feedback> Feedbacks
             => _feedbacks ??= new GenericRepository<Feedback>(_context);
 

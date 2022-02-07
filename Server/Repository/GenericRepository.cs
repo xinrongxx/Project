@@ -1,5 +1,5 @@
-﻿using CarRentalManagement.Server.Data;
-using CarRentalManagement.Server.IRepository;
+﻿using Grooviee.Server.Data;
+using Grooviee.Server.IRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace CarRentalManagement.Server.Repository
+namespace Grooviee.Server.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

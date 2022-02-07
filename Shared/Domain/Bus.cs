@@ -1,4 +1,4 @@
-﻿using CarRentalManagement.Shared.Domain;
+﻿using Grooviee.Shared.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRentalManagement.Shared.Domain
+namespace Grooviee.Shared.Domain
 {
-    public class Buses : BaseDomainModel
+    public class Bus : BaseDomainModel
     {
         [Required]
         [DataType(DataType.Date)]
-        public int BusSeater { get; set; }
+        public string BusSeater { get; set; }
         public string Type { get; set; }
         [Required]
         [DataType(DataType.Currency)]

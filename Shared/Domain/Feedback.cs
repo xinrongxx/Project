@@ -1,11 +1,11 @@
-﻿using CarRentalManagement.Shared.Domain;
+﻿using Grooviee.Shared.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRentalManagement.Shared.Domain
+namespace Grooviee.Shared.Domain
 {
     public class Feedback : BaseDomainModel
     {
